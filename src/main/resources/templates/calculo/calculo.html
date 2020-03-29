@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+	  layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+		<main role="main">
+
+		<section class="jumbotron text-center mt-5">						
+			<div class="container">
+				<h1 class="jumbotron-heading">Sistema para Cálculo de Informação Nutricional</h1>
+				<p class="lead text-muted">You Chocolatier</p>				
+			</div>
+		</section>
+		
+		<div class="album py-3 bg-light">
+			<div class="container">
+				<div class="d-flex justify-content-center">
+					<div class="col-md-12">
+						<div th:replace="fragments/alert :: alerta-sucesso"></div>
+						
+						<form method="POST" th:action="@{/calcular/calcular/}" th:object="${formula}" class="was-validated" autocomplete="off">
+							
+							<div>
+								<label for="porcao">Porção em gramas</label> 	
+							</div>	
+							<div class="mb-3">
+								<input id="porcao" type="text" th:field="*{porcao}" class="decimalsemponto" required></input>	
+							</div>
+							<div class="form-row">								
+								<div class="form-group col-md-12">
+									<div id="emendaHTMLingrediente"></div>
+									<a href="#" id="btnAdicionaIngrediente" style="color: #006400;">
+									<i class="fa fa-plus"></i> Adicionar</a>
+								</div>
+							</div>						
+							<input id="ingredientes" th:field="*{ingredientes}" type="hidden" ></input>
+							<input id="quantidades" th:field="*{quantidades}" type="hidden" ></input>
+							<div class="form-group row">
+								<div class="col-sm-10">
+									<button type="submit" id="btnCalcular" class="btn btn-primary"
+										data-toggle="tooltip" data-placement="right" title="Calcular">
+										<i class="fas fa-save"></i> Calcular
+									</button>
+								</div>
+							</div>
+						</form>
+												
+					</div>
+				</div>
+			</div>
+		</div>			
+		</main>
+
+	</section>
+	<script	th:src="@{/js/calculo.js?(v=${version})}" th:fragment="js"></script>
+	<script th:inline="javascript" th:fragment="inlinescript">
+	
+	var idContador = 0;
+	var ingredientes = [];
+	var quantidades = [];
+	
+	function exclui(id){
+		var campo = $("#"+id.id);
+		campo.hide(200);
+		campo.remove();
+	}
+	
+	$( document ).ready(function() {
+	
+		$("#btnAdicionaIngrediente").click(function(e){
+			e.preventDefault();
+			adicionaCampo();
+		})
+	
+		function adicionaCampo(){
+		
+			idContador++;
+			
+			var idNome = "nome"+idContador;
+			var idPercentual = "percentual"+idContador;			
+			var idForm = "form"+idContador;
+			
+			var html = "";
+			
+			html += "<div style='margin-top: 10px; padding: 0px' class='input-group' id='"+idForm+"'>";
+			html += "<select class='custom-select novoingrediente' id='"+idNome+"'> </select>&nbsp;&nbsp;";
+			html += "<input type='text' id='"+idPercentual+"' class='form-control novaquantidade decimal' placeholder='Insira o %' required/>";
+			html += "<span class='input-group-btn'>";
+			html += "<button class='btn' onclick='exclui("+idForm+")' type='button'><span class='fa fa-trash'></span></button>";
+			html += "</span>";
+			html += "</div>";
+			
+			$("#emendaHTMLingrediente").append(html);
+			
+			$.get('/ingrediente/listar' , function( result ) {
+		    	$.each(result, function (k, v) {	    		
+	    			$("#"+idNome).append( 
+	        			'<option name= "op" class="op" value="'+ v.id +'">'+ v.nome + '</option>'
+	        		);
+		    	 });
+		    });
+			
+			$(".decimal").on("keypress keyup blur",function (event) {
+		   		if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+		             event.preventDefault();
+		         }
+		     });
+		}	
+	});	
+	
+	$("#btnCalcular").click(function(){
+		
+		$('.novoingrediente').each(function(){
+			if($(this).is(":visible")){
+				ingredientes.push($(this).val());
+			}
+		});
+			
+		$('.novaquantidade').each(function(){
+			if($(this).is(":visible")){
+				quantidades.push($(this).val());
+			}
+		});
+		
+		document.getElementById("ingredientes").value = ingredientes;
+		document.getElementById("quantidades").value = quantidades;
+	});
+	
+	$(".decimalsemponto").on("keypress keyup blur",function (event) {
+   		if (event.which < 48 || event.which > 57){
+             event.preventDefault();
+         }
+     });
+	
+	</script>
+</body>
+</html>
