@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "youchocolatier",
+  "private_key_id": "67c395396ae1eebe636f5d110a1b470ef0e84dae",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDXfS+5Qd6eOaad\nUgYmnNrFOT8aZ/pexQ+aWVITCvzFMNoUMa8dvu3wrn8F+aXoKMZSJNwQOyyrWVvO\niqrsf++uU+yJI8f2++qC1tC+eQHe145SFLccePzJEnmVVSXW3jyYfRIAmOQ9/WD3\n0gLM9t62MLOvlak0jjxK50WHi7oHRr4BK0yudlHUubxmaTTo4hsUdGHsA6ks2jDX\nMoQnYugx0dz0jD1N/ojfwZ2Sn7g99Devc/nxaQMA9CD7PKgYvcr97fUGjqZ/tSRj\nJOnfzQ6djuVTSQnkuMbdO1H6On/nPVoW7fw81rqIR3dZ01HfndupVhHXdRd94IOT\n9v7sn5ObAgMBAAECggEACPOOU/SRU6LmPorCiEAW//8mYlAHbbOWt/BJIVL6uEZI\nCNnqtSJrrlMEiJib2ug2tM4LLJfVfZizE5vD1ecxBN2mA1xh8ur42htXHuwJg9qr\npgU7Ete2+7NLK0Tj0xuQPaIuAt0j16wuDWophTiMFkCXqXRe5Wv/9sYv2tDKSk42\neoN5R3C8O1Nde7PrLiPAxVRCvfDPXU4q2ByRrasX/sC7kUCux/FHzjDQNSeqkpOg\nEB+Yu1lEKYoPRfaTvsc2r8d0lBeMqXdKQQoTTOphqMg0osO8YLF1NpMs6nPS+Io3\n2Yf0SEDa9K4r2lyC1JElQ4YE4G8HWyk05hwIWX4pYQKBgQDt4ZwkdFH+1yT1I1iv\n8zRPK18vv+SfqqsgUMwxJ7WSjET3VZGzZcs2wbZyr7I3z5CdlTwu+XGjzMfismRY\nRVAYm8S3nv58XcB1W4TU+jZT/pqBE2wai5BuuzDrP6/54K/Sxui0SpIHH2ZeB3aY\nbiilDisMB68M/8Og2WMnmYyC/QKBgQDn5vRu5JGpMiDGv29Cypk2GwMid+rumpBl\nKucYoyZLd75UPqnkMl6Gc0svvdoxm3gxG63lK/yIinnNSlNzDjQ8S531rgoc8pEb\nxzMLcBNKKKv249MV5laBWs0QNtKu/ZBtAabZpJoCGpyXbbX7nhH3WhaZLYQpR9Ia\niXEBTwBwdwKBgAtlt9l3SUZwgHDOVL15ZZQ1e8YJ56ZOwww1UtM4F9cBqXxAOU7j\nHa1t8pPkHyHVbBRgxhVqFivG7/zIl04zY/cJ3478qyzCQSpeTCr4Igo8NKLij1dm\nQHFNvrZGwuOyBDqRFS0uNXjp5Dm1GdWL0Z624xEcfSKeTn0ybTHEhZrxAoGAbPJW\n4YYmXGu9dEHZfnJ5+i5EkbvutjwNHEpEmZGEWy4dT6zE2f1D5TxjFUHHMUkN9VxA\nnQrGMEuGH4kMnWAN8EnCIvqpq6HVxEwYUgZMOanT6EBuGbrF5y2Ga1imMCnV4TBG\nd7dZ1yUzbfzP4y8G18MOHNaCYXZpYagyW+AGn88CgYBP0LWUnaqUSqXe0WQh4T/K\nbMR+fmRe0f2kSd2TyUJ4qvsbonPEx24LlcsCZ6E8j3jVNGczUwxJD/0LkDaI1Of8\nDNziYoEDeS+ffPqsaTHkkUOKIziNYOTx82+4MmB7kzzD85092kdb7f67rD4CxSyT\nWBTOWQPlT0JdLxjWS9Fxcg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "youchocolatier@appspot.gserviceaccount.com",
+  "client_id": "117131143703679436403",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/youchocolatier%40appspot.gserviceaccount.com"
+}
