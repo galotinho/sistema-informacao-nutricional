@@ -65,9 +65,7 @@ public class CalcularService {
 		Optional<Double> gordurassaturadas = composicao.stream().map(x -> x.getGordurassaturadas()).reduce((x,y) -> x + y);
 		Optional<Double> gordurastrans = composicao.stream().map(x -> x.getGordurastrans()).reduce((x,y) -> x + y);
 		Optional<Double> fibraalimentar = composicao.stream().map(x -> x.getFibraalimentar()).reduce((x,y) -> x + y);
-		Optional<Double> sodio = composicao.stream().map(x -> x.getSodio()).reduce((x,y) -> x + y);
-		
-		
+		Optional<Double> sodio = composicao.stream().map(x -> x.getSodio()).reduce((x,y) -> x + y);		
 		
 		double energeticokcal = (carboidratos.get()*4+proteinas.get()*4+gordurastotais.get()*9);
 		double energeticokj = (carboidratos.get()*17+proteinas.get()*17+gordurastotais.get()*37);
